@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TrucksController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,4 +29,12 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::middleware(['auth', 'verified'])->group(function() {
+    Route::get('/trucks', [TrucksController::class, 'index'])->name('trucks.index');
+    Route::get('/trucks/create', [TrucksController::class, 'create'])->name('trucks.create');
+    Route::post('/trucks/store', [TrucksController::class, 'store'])->name('trucks.store');
+    Route::get('/trucks/{id}/edit', [TrucksController::class, 'edit'])->name('trucks.edit');
+    Route::put('/trucks/{id}/update', [TrucksController::class, 'update'])->name('trucks.update');
+    Route::delete('/trucks/{id}/delete', [TrucksController::class, 'destroy'])->name('trucks.destroy');
+});
 require __DIR__.'/auth.php';
