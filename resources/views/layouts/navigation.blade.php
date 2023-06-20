@@ -10,7 +10,6 @@
                 @auth
                     <div class="d-flex justify-content-between">
                         <a href="{{ url('/trucks') }}" class="navbar-brand">Trucks</a>
-                        <a href="{{ url('/subunits') }}" class="navbar-brand">Subunits</a>
                         <form method="POST" action="{{ route('logout') }}" class="navbar-brand">
                             @csrf
                             <x-dropdown-link :href="route('logout')"

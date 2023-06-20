@@ -14,4 +14,6 @@
             <button type="submit" class="btn btn-outline-primary">Update</button>
         </form>
     </div>
+    @include('subunits.subunits')
+    @include('subunits.create')
 @endsection
