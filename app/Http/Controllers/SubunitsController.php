@@ -33,6 +33,7 @@ class SubunitsController extends Controller
     {
         $subunits = new Subunits();
         $subunits->user_id = Auth::user()->id;
+        $subunits->subunit = $request->subunit;
         $subunits->trucks_id = $trucksId;
         $subunits->unit_number = $request->unit_number;
         $subunits->start_date = $request->start_date;
@@ -68,8 +69,9 @@ class SubunitsController extends Controller
         $trucks = Trucks::findOrFail($subunits->trucks_id);
         $trucksId = $trucks->id;
 
-        $subunits->unit_ = $request->subunit;
-        $subunits->start_dte = $request->start_date;
+//        $subunits->unit_number = $request->unit_number;
+        $subunits->subunit = $request->subunit;
+        $subunits->start_date = $request->start_date;
         $subunits->end_date = $request->end_date;
         $subunits->save();
 

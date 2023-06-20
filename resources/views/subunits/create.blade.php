@@ -9,7 +9,9 @@
             </div>
             <div class="form-group">
                 <label for="subunit">Subunit</label>
-                <input name="subunit" required type="text" class="form-control">
+                <select name="subunit">
+                    <option value="">{{$truck->unit_number}}</option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="start_date">Start date</label>
